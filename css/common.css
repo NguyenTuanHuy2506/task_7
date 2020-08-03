@@ -1,0 +1,263 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
+/*-----------font-family
+	font-family: 'Arvo', serif;
+*/
+.on-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.on-scroll {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  text-transform: uppercase;
+  font-family: "Arvo", serif;
+  font-size: 1.6rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+}
+.on-scroll::after {
+  content: "";
+  width: 13.9rem;
+  height: 0.2rem;
+  margin-left: 2rem;
+  background-color: #000;
+}
+
+.obj-decoration {
+  position: absolute;
+  z-index: -1;
+}
+
+.drop {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.drop__item {
+  padding: 0 4rem;
+  background-color: white;
+}
+.drop__item:hover > .drop__sub-menu {
+  display: block;
+}
+.drop__sub-title {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.drop__sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: rgba(241, 241, 241, 0.6);
+}
+.drop__sub-menu li {
+  position: relative;
+  padding: 1rem;
+}
+
+.d-table {
+  display: table;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-family: "Arvo", serif;
+  font-size: 1.6rem;
+  color: #939393;
+  display: table;
+  margin: auto;
+  text-align: center;
+}
+
+.sub-heading {
+  font-size: 3.13rem;
+  color: #333333;
+  font-weight: bold;
+  display: table;
+  margin: auto;
+  margin-top: 1rem;
+  position: relative;
+  padding: 0 1rem;
+}
+.sub-heading::after {
+  content: "";
+  width: 100%;
+  height: 2rem;
+  background-color: #ffee31;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(35%);
+}
+
+.num__title {
+  font-size: 4.5rem;
+  font-family: "Arvo", serif;
+}
+
+.text-blue2 {
+  color: #34a2ff;
+}
+
+.text-green2 {
+  color: #92d25e;
+}
+
+.text-green3 {
+  color: #00a078;
+}
+
+.border--blue2 {
+  border-color: #4482bb !important;
+}
+
+.border--green2 {
+  border-color: #10a680 !important;
+}
+
+.border--orange2 {
+  border-color: #f68a3b !important;
+}
+
+.ab--blue2::after, .ab--blue2::before {
+  background-color: #4482bb !important;
+}
+
+.ab--green2::after, .ab--green2::before {
+  background-color: #10a680 !important;
+}
+
+.ab--orange2::after, .ab--orange2::before {
+  background-color: #f68a3b !important;
+}
+
+.p--description {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.vertical-fiexd-text {
+  position: absolute;
+  left: 0;
+  top: 39.5rem;
+  height: 500rem;
+  writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  font-size: 40rem;
+  color: #c9c9c9;
+  letter-spacing: 0.3rem;
+  line-height: 0.5;
+  opacity: 0.2;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Arvo", serif;
+  z-index: -1;
+}
+
+.sub-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 3.5rem;
+  letter-spacing: -0.05rem;
+}
+
+.text--normal {
+  font-weight: normal;
+}
+
+.under-background {
+  position: absolute;
+  z-index: -1;
+}
+
+.text--content {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5rem solid transparent;
+}
+
+.list--add li {
+  position: relative;
+  font-size: 1.8rem;
+  color: #333;
+  padding-left: 2rem;
+  padding-right: 5.5rem;
+  line-height: 3rem;
+  margin: 2rem 0;
+}
+.list--add li::before, .list--add li::after {
+  content: "";
+  width: 0.3rem;
+  height: 0.9rem;
+  position: absolute;
+  top: 0.9rem;
+  left: 0.3rem;
+  background-color: inherit;
+}
+.list--add li::after {
+  transform: rotate(90deg);
+}
+
+.food-button {
+  outline: none !important;
+  border: 0.5rem solid #ed6d00;
+  width: 31rem;
+  height: 7rem;
+  background-color: #fff;
+  position: relative;
+  margin-top: 2rem;
+}
+.food-button::after, .food-button::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 0.2rem solid #ed6d00;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: white;
+}
+.food-button::after {
+  right: 1.5rem;
+  top: 50%;
+}
+.food-button::before {
+  right: 1.8rem;
+  top: 55%;
+}
+
+/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,181 @@
+/*-----------font-family
+	font-family: 'Arvo', serif;
+*/
+.mv {
+  display: flex;
+}
+.mv__banner {
+  width: 100%;
+  margin-top: 10.8rem;
+  position: relative;
+}
+.mv__banner .obj-decoration {
+  height: 71.1rem;
+  background-color: #eee;
+  right: 10.2rem;
+  top: 5.5rem;
+  left: 32.8rem;
+}
+.mv__content {
+  max-width: 41rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  right: 25rem;
+  transform: translateY(-50%);
+}
+.mv__content h3 {
+  font-size: 3.2rem;
+  text-indent: -1rem;
+}
+.mv__content h3 label {
+  font-weight: bold;
+  color: #666565;
+  border-bottom: 0.9rem solid #ffee31;
+  display: inline;
+  line-height: 6rem;
+  letter-spacing: -0.2rem;
+}
+.mv .contact {
+  min-width: 19rem;
+}
+.mv .contact-rect {
+  width: 100%;
+  height: 19rem;
+  background-color: #434343;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.mv .contact-rect span {
+  font-size: 1.8rem;
+  font-family: "Arvo", serif;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.mv .contact-scroll {
+  width: 100%;
+  height: 76.9rem;
+  overflow: hidden;
+  background-color: #ffee31;
+  position: relative;
+}
+
+.message {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.message__content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 16.4rem 0;
+}
+.message__content li {
+  width: 100%;
+  max-width: 50%;
+}
+.message__title {
+  padding-right: 3rem;
+  padding-top: 3em;
+}
+.message__img {
+  padding-left: 6rem;
+}
+.message .under-background-01 {
+  top: 0;
+  right: 0;
+  transform: translateX(25%);
+}
+.message .under-background-02 {
+  bottom: 0;
+  right: 0;
+  transform: translateX(32%);
+}
+
+.philosophy {
+  width: 100%;
+}
+.philosophy__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.philosophy__wrap {
+  width: 100%;
+  text-align: center;
+  padding: 5rem;
+  position: relative;
+}
+
+.vert-line::after, .vert-line::before {
+  content: "";
+  width: 0.1rem;
+  height: 16rem;
+  background-color: #e5e5e5;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.vert-line::after {
+  right: 0;
+}
+.vert-line::before {
+  left: 0;
+}
+
+.work {
+  width: 100%;
+  margin-top: 7.5rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10rem;
+}
+.work .under-background {
+  right: 0;
+  top: 0;
+  transform: translateX(30%);
+}
+.work .under-background img {
+  max-width: 100%;
+}
+.work .heading {
+  margin-bottom: 6rem;
+}
+.work .container {
+  margin-bottom: 10rem;
+  padding: 0 5rem;
+}
+.work .container .sub-title {
+  letter-spacing: -0.18rem;
+}
+
+.wrap {
+  width: calc(100% - 15%);
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+.wrap__box {
+  width: 100%;
+}
+.wrap__content {
+  max-width: 56rem;
+}
+.wrap__img {
+  display: flex;
+  justify-content: flex-end;
+}
+.wrap__img img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,22 @@
+.header {
+  width: calc(100% - 19rem);
+  height: 10.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+}
+.header__logo {
+  position: relative;
+  padding: 0 1rem;
+  margin-right: auto;
+}
+.header__logo:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=header.css.map */
