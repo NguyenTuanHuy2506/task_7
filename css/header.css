@@ -8,7 +8,19 @@
   position: fixed;
   left: 0;
   top: 0;
+  background-color: #fff;
   z-index: 1030;
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding-left: 2rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    height: 6.5rem;
+  }
 }
 .header__logo {
   position: relative;
@@ -17,6 +29,169 @@
 }
 .header__logo:hover {
   opacity: 0.8;
+}
+@media screen and (max-width: 768px) {
+  .header__logo {
+    width: 10rem;
+    padding: 0;
+  }
+  .header__logo img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header__menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header__menu.active {
+    display: block;
+    position: fixed;
+    top: 10.5rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(204, 204, 204, 0.8);
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header__menu.active {
+    top: 6.5rem;
+  }
+}
+
+.drop {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+@media screen and (max-width: 1024px) {
+  .drop {
+    flex-direction: column;
+  }
+}
+.drop .md-li {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .drop .md-li {
+    display: block;
+    padding: 2rem;
+  }
+}
+.drop__item {
+  padding: 1rem 4rem;
+}
+@media screen and (max-width: 1024px) {
+  .drop__item {
+    padding: 4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .drop__item {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .drop__item:hover > .drop__sub-menu {
+    display: block;
+  }
+}
+.drop__item::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #ffee31;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.drop__item:hover::after {
+  width: 100%;
+}
+.drop__sub-title {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.drop__sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 4rem;
+  padding: 1rem;
+  background-color: rgba(31, 31, 31, 0.8);
+}
+@media screen and (max-width: 1024px) {
+  .drop__sub-menu {
+    position: relative;
+  }
+}
+.drop__sub-menu li {
+  position: relative;
+  padding: 1.5rem 0;
+  font-size: 1.8rem;
+  color: #ccc;
+  letter-spacing: 0.3rem;
+  transition: all 0.3s ease;
+}
+.drop__sub-menu li:hover {
+  color: #fff;
+  opacity: 1;
+  padding-left: 2.5rem;
+}
+.drop__sub-menu li:nth-child(2n+1) {
+  background-color: rgba(204, 204, 204, 0.6);
+}
+
+.hambuger-button {
+  width: 3rem;
+  height: 2rem;
+  outline: none !important;
+  border: none;
+  position: relative;
+  background-color: transparent;
+  margin-right: 2rem;
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .hambuger-button {
+    display: block;
+  }
+}
+.hambuger-button span {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #1f1f1f;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.hambuger-button span:nth-child(1) {
+  top: 0;
+}
+.hambuger-button span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hambuger-button span:nth-child(3) {
+  bottom: 0;
+}
+.hambuger-button.active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.hambuger-button.active span:nth-child(2) {
+  opacity: 0;
+}
+.hambuger-button.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 /*# sourceMappingURL=header.css.map */

@@ -7,47 +7,76 @@
 
 .mv{
 	display: flex;
-
 	&__banner{
 		width: 100%;
-		margin-top: 10.8rem;
+		margin-top: 10.7rem;
 		position: relative;
+		@include mobile{
+			margin-top: 6.7rem;
+		}
+		img{
+			width: 100%;
+			max-width: 70.6rem;
+			min-width: .1rem;
+		}
 		.obj-decoration{
 			height: 71.1rem;
 			background-color: #eee;
 			right: 10.2rem;
 			top: 5.5rem;
 			left: 32.8rem;
+			@include mobile{
+				left: 50%;
+				right: 0;
+				top: 0;
+				height: 100%;
+			}
 		}
 	}
 	&__content{
-		max-width: 41rem;
+		max-width: 43rem;
 		width: 100%;
 		position: absolute;
 		top: 50%;right: 25rem;
 		transform: translateY(-50%);
+		letter-spacing: .05rem;
+		@include mobile{
+			right: 0;
+			left: 0;
+			margin: auto;
+			padding: 0 2rem;
+		}
 		h3{
-			font-size:3.2rem;
 			text-indent: -1rem;
 			label{
+				font-size:3.2rem;
 				font-weight: bold;
 				color: #666565;
 				border-bottom: .9rem solid #ffee31;
 				display: inline;
 				line-height: 6rem;
 				letter-spacing: -.2rem;
+				@media only screen and (max-width:767px){
+					font-size: 2rem;
+				}
 			}
 		}
 	}
 	.contact{
 		min-width: 19rem;
+		@include ipadpro{
+			display: none;
+		}
 		&-rect{
-			width: 100%;
+			width: 19rem;
 			height: 19rem;
 			background-color: #434343;
 			display: flex; justify-content: center; align-items: center;
 			flex-direction: column;
-			position: relative;
+			position: fixed;
+			top: 0;
+			transition: all .3s ease;
+			z-index: 1020;
 			span{
 				font-size: 1.8rem;
 				font-family: 'Arvo', serif;
@@ -56,11 +85,19 @@
 				letter-spacing: .2rem;
 				margin-top: 2rem;
 				display: inline-block;
+				@include ipadpro{
+					font-size: 1.6rem;
+					letter-spacing: 0;
+				}
+			}
+			&.active{
+				height: 10.7rem;
 			}
 		}
 		&-scroll{
 			width: 100%;
-			height: 76.9rem;
+			// height: 76.9rem;
+			height: 100%;
 			overflow: hidden;
 			background-color: #ffee31;
 			position: relative;
@@ -76,9 +113,21 @@
 		display: flex;align-items: center;
 		position: relative;
 		margin: 16.4rem 0;
+		@include ipadpro{
+			padding-left: 2rem;
+		}
+		@include mobile{
+			flex-direction: column;
+			padding: 0 2rem;
+			margin: 8rem 0;
+		}
 		li{
 			width: 100%;
 			max-width: 50%;
+			@include mobile{
+				max-width: 100%;
+				padding: 0;
+			}
 		}
 	}
 	&__title{
@@ -87,29 +136,68 @@
 	}
 	&__img{
 		padding-left: 6rem;
+		@include mobile{
+			min-height: 40rem;
+			margin-top: 4rem;
+			display: flex;
+			align-items: center;
+		}
+		img{
+			@include mobile{
+				width: 100%;
+			}
+		}
+	}
+	.under-background-01,
+	.under-background-02{
+		height: 28.8rem;
+		img{
+			@include mobile{
+				width: 100%;
+			}
+		}
+		
 	}
 	.under-background-01{
-		top: 0;right: 0;
-		transform: translateX(25%);
+		right: -15rem;
+		top: 0;
+		@include mobile{
+			transform: translate(25%,50%);
+		}
+		@media only screen and (max-width: 767px){
+			top: 50%;
+			transform: translate(25%,0%);
+		}
 	}
 	.under-background-02{
-		bottom: 0;right: 0;
-		transform: translateX(32%);
+		bottom: 0;
+		right: -20rem;
 	}
+	
 }
 
 .philosophy{
 	width: 100%;
+	@include mobile{
+		margin-top: 4rem;
+	}
 	&__content{
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-around;
+		@media only screen and (max-width: 767px){
+			flex-direction: column;
+		}
 	}
 	&__wrap{
 		width: 100%;
 		text-align: center;
 		padding: 5rem;
 		position: relative;
+		@media only screen and (max-width: 767px){
+			padding: 0 2rem;
+			margin-top: 3rem;
+		}
 	}
 }
 .vert-line{
@@ -140,19 +228,35 @@
 		right: 0;
 		top: 0;
 		transform: translateX(30%);
+		transition: all .3s ease;
+		@include ipadpro{
+			transform: translateX(50%);
+		}
 		img{
 			max-width: 100%;
 		}
 	}
 	.heading{
-		margin-bottom: 6rem;
+		margin-bottom: 5rem;
 	}
 	.container{
-		margin-bottom: 10rem;
-		padding: 0 5rem;
+		padding: 0 4.5rem;
+		@include mobile{
+			padding: 0 2rem;
+		}
 		.sub-title{
 			letter-spacing: -.18rem;
 		}
+
+	}
+	.wrap:first-of-type{
+		margin-top: 8.8rem;
+		@include mobile{
+			margin-top: 5rem;
+		}
+	}
+	.list--add{
+		margin-top: .5rem;
 	}
 }
 
@@ -161,16 +265,72 @@
 	margin-left: auto;
 	display: flex;justify-content: flex-end;align-items: center;
 	overflow: hidden;
-	&__box{
+	height: 100%;
+	// max-height: 43.9rem;
+	@include ipadpro{
 		width: 100%;
+		padding-left: 2rem;
+	}
+	@include mobile{
+		padding-left: 0;
+		flex-direction: column;
+	}
+	&__box{
+		width: 100%;height: 100%;
+		@include mobile{
+			padding: 0 2rem;
+			margin-top: 3rem;
+		}
+	}
+	&__box:last-of-type{
+		align-self: flex-start;
 	}
 	&__content{
 		max-width: 56rem;
-		h3{
+		@include mobile{
+			max-width: 100%;
 		}
 	}
 	&__img{
-		display: flex; justify-content: flex-end;
-		img{width:100%;}
+		text-align: right;
+		img{max-width:100%;height: 100%;object-fit: none;}
 	}
 }
+
+.list--add{
+	li{
+		width: 100%;
+		position: relative;
+		font-size: 1.8rem;
+		color: #333;
+		padding-left: 2rem;
+		padding-right: 4rem;
+		line-height: 2.8rem;
+		margin: 1rem 0;
+		letter-spacing: 0rem;
+		display: inline-block;
+		@include mobile{
+			font-size: 1.6rem;
+			line-height: 2rem;
+			padding-right: 0;
+		}
+		&::before, &::after{
+			content: '';
+			width: .3rem;
+			height: .9rem;
+			position: absolute;
+			top: .9rem;
+			left: .3rem;
+			background-color: inherit;
+			@include mobile{
+				top: 0.3rem;
+			}
+
+		}
+		&::after{
+			transform: rotate(90deg);
+		}
+	}
+	li:first-child{letter-spacing: .05rem;}
+}
+.pal-0{padding-left: 0 !important;}

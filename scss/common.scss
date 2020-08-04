@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif;
     @media screen and (max-width: 768px) {
@@ -14,6 +16,7 @@ body {
         padding: 0;
     }
 }
+
 /*-----------font-family
 	font-family: 'Arvo', serif;
 */
@@ -22,7 +25,11 @@ body {
 
 .on-link{
 	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
 }
 
 .on-scroll{
@@ -50,38 +57,6 @@ body {
 .obj-decoration{
 	position: absolute;
 	z-index: -1;
-}
-
-.drop{
-	position: relative;
-	width: 100%;
-	display: flex;
-
-	&__item{
-		padding: 0 4rem;
-		background-color: white;
-		&:hover > .drop__sub-menu{
-			display: block;
-		}
-	}
-
-	&__sub-title{
-		position: relative;
-		font-size: 1.8rem;
-		font-weight: bold;
-	}
-
-	&__sub-menu{
-		display: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		margin-top: 2rem;
-		padding: 2rem;
-		background-color: rgba(#f1f1f1, .6);
-		li{position: relative; padding: 1rem;}
-	}
 }
 
 .d-table{
@@ -161,6 +136,9 @@ body {
 	font-size: 2.5rem;
 	font-weight: bold;
 	margin-top: 3rem;
+	@include mobile{
+		font-size: 1.8rem;
+	}
 }
 
 .vertical-fiexd-text{
@@ -179,6 +157,11 @@ body {
 	text-transform: uppercase;
 	font-family: 'Arvo', serif;
 	z-index: -1;
+	@media only screen and (max-width: 767px){
+		top: 25.5rem;
+		font-size: 20rem;
+		letter-spacing: 10rem;
+	}
 }
 
 .sub-title{
@@ -186,6 +169,10 @@ body {
 	font-weight: bold;
 	line-height: 3.5rem;
 	letter-spacing: -.05rem;
+	@include mobile{
+		letter-spacing: 0;
+		font-size: 1.6rem;
+	}
 }
 .text--normal{
 	font-weight: normal;
@@ -198,34 +185,11 @@ body {
 .text--content{
 	font-size: 2.5rem;
 	font-weight: bold;
-	padding-bottom:1.5rem;
+	padding-bottom: 1rem;
 	border-bottom: .5rem solid transparent;
 }
 
-.list--add{
-	li{
-		position: relative;
-		font-size: 1.8rem;
-		color: #333;
-		padding-left: 2rem;
-		padding-right: 5.5rem;
-		line-height: 3rem;
-		margin: 2rem 0;
-		&::before, &::after{
-			content: '';
-			width: .3rem;
-			height: .9rem;
-			position: absolute;
-			top: .9rem;
-			left: .3rem;
-			background-color: inherit;
-		}
-		&::after{
-			transform: rotate(90deg);
-		}
-	}	
-}
-
+//-------food button-------//
 .food-button{
 	outline: none !important; 
 	border: .5rem solid #ed6d00;
@@ -234,6 +198,10 @@ body {
 	background-color: #fff;
 	position: relative;
 	margin-top: 2rem;
+	@include mobile{
+		width: 100%;
+		// max-width: 32rem;
+	}
 	&::after, &::before{
 		content: '';
 		width: .9rem;
@@ -251,5 +219,149 @@ body {
 		right: 1.8rem;
 		top: 55%;
 	}
+}
 
+//-------to top button-------//
+
+.to-top-button{
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background-color: #c01920;
+    right: 13rem;
+    bottom: 13rem;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1020;
+    transition: all .3s ease;
+    &.active{
+    	display: flex;
+    }
+    @include mobile{
+        right: 3rem;
+        bottom: 3rem;
+    }
+    span{
+        width: 3rem;
+        height: .2rem;
+        background-color: #fff;
+        &:nth-child(1){transform: translateX(.4rem) rotate(-45deg);}
+        &:nth-child(2){transform: translateX(-.4rem) rotate(45deg);}
+    }
+    &:hover{opacity: .8;}
+}
+
+
+//-------contact button------------//
+.contact-button{
+	width: 100%;
+	height: 6rem;
+	outline: none !important;
+	border: none;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	position: relative;
+	@include ipadpro{
+		display: flex;
+	}
+	span{
+		font-size: 2rem;
+		font-family: 'Arvo', serif;
+		margin-left: 2rem;
+	}
+}
+
+
+//-------passing bar after effect------------//
+@-webkit-keyframes passing-bar{
+	0% {
+		left: 0;
+		right: auto;
+		width: 0;
+	}
+	50% {
+		left: 0;
+		right: auto;
+		width: 100%;
+	}
+	51% {
+		left: auto;
+		right: 0;
+		width: 100%;
+	}
+	100% {
+		left: auto;
+		right: 0;
+		width: 0;
+	}
+}
+@keyframes passing-bar{
+	0% {
+		left: 0;
+		width: 0;
+	}
+	50% {
+		left: 0;
+		width: 100%;
+	}
+	51% {
+		left: 0;
+		width: 100%;
+	}
+	100% {
+		left: 100%;
+		width: 0;
+	}
+}
+
+//----------passing bar text effect--------//
+@-webkit-keyframes passing-txt{
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes passing-txt{
+	0% { opacity:0; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+.passing{
+	overflow: hidden;
+	&-bar {
+		position: relative;
+	}
+	&-text{
+		opacity: 0;
+	}
+	&-bar::before {
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		background-color: #ffee31;
+	}
+	&-bar.move::before {
+		-webkit-webkit-animation: passing-bar .5s ease 0s 1 normal forwards;
+		-moz-webkit-animation: passing-bar .5s ease 0s 1 normal forwards;
+		-ms-webkit-animation: passing-bar .5s ease 0s 1 normal forwards;
+		-o-webkit-animation: passing-bar .5s ease 0s 1 normal forwards;
+		webkit-animation: passing-bar .5s ease 0s 1 normal forwards;
+		animation: passing-bar .5s ease 0s 1 normal forwards;
+	}
+	&-text.move {
+		-webkit-webkit-animation: passing-txt .5s ease 0s 1 normal forwards;
+		-moz-webkit-animation: passing-txt .5s ease 0s 1 normal forwards;
+		-ms-webkit-animation: passing-txt .5s ease 0s 1 normal forwards;
+		-o-webkit-animation: passing-txt .5s ease 0s 1 normal forwards;
+		webkit-animation: passing-txt .5s ease 0s 1 normal forwards;
+		animation:passing-txt .5s ease 0s 1 normal forwards;
+	}
 }

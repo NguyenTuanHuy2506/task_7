@@ -3,6 +3,11 @@
   background-color: #ffee31;
   padding: 9rem 0;
 }
+@media screen and (max-width: 768px) {
+  .company {
+    padding: 2rem;
+  }
+}
 .company .heading {
   margin-bottom: 5rem;
 }
@@ -10,6 +15,11 @@
   width: 100%;
   padding: 0 5rem;
   display: flex;
+}
+@media screen and (max-width: 768px) {
+  .company__info {
+    padding: 0;
+  }
 }
 .company__title, .company__detail {
   width: 100%;
@@ -27,6 +37,11 @@
   border-top: 0.2rem solid #b2a622;
   line-height: 3rem;
 }
+@media screen and (max-width: 768px) {
+  .company__detail {
+    padding-left: 1rem;
+  }
+}
 
 .end-page {
   width: 100%;
@@ -36,8 +51,20 @@
 .end-page__container li {
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .end-page__container li {
+    padding: 0 2rem;
+  }
+}
 .end-page__container li:first-child {
   height: 38rem;
+  padding-top: 11rem;
+}
+@media screen and (max-width: 768px) {
+  .end-page__container li:first-child {
+    height: 24rem;
+    padding-top: 4rem;
+  }
 }
 .end-page__container li:first-child h3 {
   font-weight: bold;
@@ -50,11 +77,24 @@
   height: 7rem;
   border: 0.1rem solid #fff;
   display: block;
-  margin: auto;
+  margin: 5rem auto 0 auto;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 7rem;
 }
 .end-page__container li:last-child {
   border-top: 0.1rem solid #fff;
   height: 8rem;
+  line-height: 8rem;
+  color: #fff;
+  font-size: 1.8rem;
+}
+@media screen and (max-width: 768px) {
+  .end-page__container li:last-child {
+    height: 5rem;
+    font-size: 1.4rem;
+    line-height: 5rem;
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */

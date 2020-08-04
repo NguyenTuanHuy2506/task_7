@@ -11,13 +11,171 @@
 	position: fixed;
 	left: 0;
 	top: 0;
+	background-color: #fff;
 	z-index: 1030;
+	@include ipadpro{
+		padding-left: 2rem;
+		width: 100%;
+	}
+	@include mobile{
+		height: 6.5rem;
+	}
 	&__logo{
 		position: relative;
 		padding:0 1rem;
 		margin-right: auto;
 		&:hover{
 			opacity: .8;
+		}
+		@include mobile{
+			width: 10rem;
+			padding: 0;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	&__menu{
+		@include ipadpro{
+			display: none;
+		}
+		&.active{
+			@include ipadpro{
+				display: block;
+				position: fixed;
+				top: 10.5rem;
+				left: 0;
+				bottom:0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(#ccc, .8);
+				overflow-y: auto;
+			}
+			@include mobile{
+				top: 6.5rem;
+			}
+		}
+	}
+}
+
+.drop{
+	position: relative;
+	width: 100%;
+	display: flex;
+	@include ipadpro{flex-direction: column;}
+	.md-li{
+		display: none;
+		@include ipadpro{
+			display: block;
+			padding: 2rem;
+		}
+	}
+	&__item{
+		padding: 1rem 4rem;
+		@include ipadpro{
+			padding: 4rem;
+		}
+		@include mobile{
+			padding: 2rem;
+		}
+		@media only screen and (min-width: 1025px){
+			&:hover > .drop__sub-menu{
+				display: block;
+			}
+		}
+		&::after{
+			content: '';
+			width: 0;
+			height: .2rem;
+			background-color: #ffee31;
+			display: inline-block;
+			transition: all .3s ease;
+		}
+		&:hover::after{
+			width: 100%;
+		}
+	}
+
+	&__sub-title{
+		position: relative;
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	&__sub-menu{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-top: 4rem;
+		padding: 1rem;
+		background-color: rgba(#1f1f1f,.8);
+		@include ipadpro{
+			position: relative;
+			// &.active{
+			// 	display: block;
+			// }
+		}
+		li{
+			position: relative;
+			padding: 1.5rem 0;
+			font-size: 1.8rem;
+			color: #ccc;
+			letter-spacing: .3rem;
+			transition: all .3s ease;
+			&:hover{
+				color: #fff;
+				opacity: 1;
+				padding-left: 2.5rem;
+			}
+		}
+		li:nth-child(2n+1){
+			background-color: rgba(#ccc,.6);
+		}
+	}
+}
+.hambuger-button{
+	width: 3rem;height: 2rem;
+	outline: none !important;
+	border: none;
+	position: relative;
+	background-color: transparent;
+	margin-right: 2rem;
+	display: none;
+	@include ipadpro{
+		display: block;
+	}
+	span{
+		width: 3rem;
+		height: .2rem;
+		background-color: #1f1f1f;
+		position: absolute;
+		left: 0;
+		transition: all .3s ease;
+	}
+	span:nth-child(1){
+		top: 0;
+	}
+	span:nth-child(2){
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	span:nth-child(3){
+		bottom:0;
+	}
+	&.active{
+		span:nth-child(1){
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
+		span:nth-child(2){
+			opacity: 0;
+		}
+		span:nth-child(3){
+			bottom:50%;
+			transform: translateY(-50%) rotate(-45deg);
 		}
 	}
 }
