@@ -1,3 +1,6 @@
+/*----------
+	header area
+-------*/
 .header {
   width: calc(100% - 19rem);
   height: 10.7rem;
@@ -64,10 +67,42 @@
   }
 }
 
+/*----------
+	drop menu
+-------*/
 .drop {
   position: relative;
   width: 100%;
   display: flex;
+  /*&__sub-menu{
+  	display: none;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	margin-top: 5rem;
+  	padding: 1rem;
+  	background-color: rgba(#1f1f1f,.8);
+  	@include ipadpro{
+  		position: relative;
+  	}
+  	li{
+  		position: relative;
+  		padding: 1.5rem 1rem;
+  		font-size: 1.8rem;
+  		color: #ccc;
+  		letter-spacing: .3rem;
+  		transition: all .3s ease;
+  		&:hover{
+  			color: #fff;
+  			opacity: 1;
+  			padding-left: 2.5rem;
+  		}
+  	}
+  	li:nth-child(2n+1){
+  		background-color: rgba(#ccc,.6);
+  	}
+  }*/
 }
 @media screen and (max-width: 1024px) {
   .drop {
@@ -85,7 +120,7 @@
 }
 .drop__item {
   padding: 1rem 4rem;
-  color: #a9a;
+  color: #434343;
 }
 @media screen and (max-width: 1024px) {
   .drop__item {
@@ -95,11 +130,6 @@
 @media screen and (max-width: 768px) {
   .drop__item {
     padding: 2rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .drop__item:hover > .drop__sub-menu {
-    display: block;
   }
 }
 .drop__item::after {
@@ -113,9 +143,6 @@
 .drop__item:hover::after {
   width: 100%;
 }
-.drop__item.active {
-  color: #434343;
-}
 .drop__item.active::after {
   width: 100%;
 }
@@ -125,38 +152,10 @@
   font-weight: bold;
   color: inherit;
 }
-.drop__sub-menu {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-top: 5rem;
-  padding: 1rem;
-  background-color: rgba(31, 31, 31, 0.8);
-}
-@media screen and (max-width: 1024px) {
-  .drop__sub-menu {
-    position: relative;
-  }
-}
-.drop__sub-menu li {
-  position: relative;
-  padding: 1.5rem 1rem;
-  font-size: 1.8rem;
-  color: #ccc;
-  letter-spacing: 0.3rem;
-  transition: all 0.3s ease;
-}
-.drop__sub-menu li:hover {
-  color: #fff;
-  opacity: 1;
-  padding-left: 2.5rem;
-}
-.drop__sub-menu li:nth-child(2n+1) {
-  background-color: rgba(204, 204, 204, 0.6);
-}
 
+/*----------
+	hambuger button
+-------*/
 .hambuger-button {
   width: 3rem;
   height: 2rem;

@@ -1,6 +1,9 @@
 /*-----------font-family
 	font-family: 'Arvo', serif;
 */
+/*----------
+	mv area
+-------*/
 .mv {
   display: flex;
 }
@@ -118,6 +121,9 @@
   position: relative;
 }
 
+/*----------
+	message area
+-------*/
 .message {
   width: 100%;
   position: relative;
@@ -132,22 +138,27 @@
 @media screen and (max-width: 1024px) {
   .message__content {
     padding-left: 2rem;
+    flex-direction: column;
+    margin: 8rem 0;
   }
 }
 @media screen and (max-width: 768px) {
   .message__content {
-    flex-direction: column;
     padding: 0 2rem;
-    margin: 8rem 0;
   }
 }
 .message__content li {
   width: 100%;
   max-width: 50%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .message__content li {
     max-width: 100%;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .message__content li {
     padding: 0;
   }
 }
@@ -156,17 +167,18 @@
   padding-top: 3em;
 }
 .message__img {
-  padding-left: 6rem;
+  padding-left: calc(20px + 1000 * ((100vw - 1600px) / 1600));
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .message__img {
     min-height: 40rem;
-    margin-top: 4rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .message__img img {
     width: 100%;
   }
@@ -174,6 +186,7 @@
 .message .under-background-01,
 .message .under-background-02 {
   height: 28.8rem;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
   .message .under-background-01 img,
@@ -183,7 +196,12 @@
 }
 .message .under-background-01 {
   right: -15rem;
-  top: 0;
+  bottom: 53%;
+}
+@media screen and (max-width: 1024px) {
+  .message .under-background-01 {
+    bottom: 45%;
+  }
 }
 @media screen and (max-width: 768px) {
   .message .under-background-01 {
@@ -192,7 +210,7 @@
 }
 @media only screen and (max-width: 767px) {
   .message .under-background-01 {
-    top: 50%;
+    bottom: 20%;
     transform: translate(25%, 0%);
   }
 }
@@ -201,6 +219,9 @@
   right: -20rem;
 }
 
+/*----------
+	philosophy area
+-------*/
 .philosophy {
   width: 100%;
 }
@@ -222,7 +243,8 @@
 .philosophy__wrap {
   width: 100%;
   text-align: center;
-  padding: 5rem;
+  padding: 0 5rem;
+  margin: 5rem 0;
   position: relative;
 }
 @media only screen and (max-width: 767px) {
@@ -237,9 +259,8 @@
   width: 0.1rem;
   height: 16rem;
   background-color: #e5e5e5;
-  top: 50%;
+  bottom: 0;
   position: absolute;
-  transform: translateY(-50%);
 }
 .vert-line::after {
   right: 0;
@@ -248,6 +269,9 @@
   left: 0;
 }
 
+/*----------
+	work area
+-------*/
 .work {
   width: 100%;
   margin-top: 7.5rem;
@@ -260,6 +284,7 @@
   top: 0;
   transform: translateX(30%);
   transition: all 0.3s ease;
+  height: 100%;
 }
 @media screen and (max-width: 1024px) {
   .work .under-background {
@@ -268,6 +293,7 @@
 }
 .work .under-background img {
   max-width: 100%;
+  height: 100%;
 }
 .work .heading {
   margin-bottom: 5rem;

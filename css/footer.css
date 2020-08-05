@@ -1,3 +1,6 @@
+/*----------
+	commpany area
+-------*/
 .company {
   width: 100%;
   background-color: #ffee31;
@@ -10,6 +13,7 @@
 }
 .company .heading {
   margin-bottom: 5rem;
+  color: #525252;
 }
 .company__info {
   width: 100%;
@@ -23,7 +27,7 @@
 }
 .company__title, .company__detail {
   width: 100%;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 .company__title {
   max-width: 14.4rem;
@@ -43,6 +47,9 @@
   }
 }
 
+/*----------
+	endpage area
+-------*/
 .end-page {
   width: 100%;
   background-color: #333;

@@ -27,7 +27,6 @@ $(window).on('load resize scroll', function(){
 	$('.visiable-area').each(function(){
 		let _top = $(this).offset().top;
 		let _bottom = $(this).offset().top + $(this).height();
-		// console.log(_scroll, _top, _bottom);
 		if (_top < _scroll + _wh/2 && _bottom > _scroll + _wh/2){
 			var _id = '#' + $(this).attr('id');
 			$('.drop__item').each(function(){
@@ -114,7 +113,7 @@ $('.on-link').click(function(e){
 	    }
 
 	    //------open submenu
-	    let _tar = $(this).parents('.drop__item').find('.drop__sub-menu');
+	    /*let _tar = $(this).parents('.drop__item').find('.drop__sub-menu');
 		console.log(_tar.length);
 		if(_wiw < 1025 &&_tar.length != 0) {
 			if(_subMenuOpen == 0)
@@ -144,8 +143,9 @@ $('.on-link').click(function(e){
 		}
 		else{
 			return false;
-		}	
-	});
+		}*/	
+	}
+});
 
 //----------open sub menu-------//
 

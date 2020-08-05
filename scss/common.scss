@@ -21,8 +21,9 @@ body {
 	font-family: 'Arvo', serif;
 */
 
-//-----------a link
-
+/*----------
+	a link
+-------*/
 .on-link{
 	position: absolute;
 	top: 0;
@@ -32,6 +33,9 @@ body {
 	z-index: 1000;
 }
 
+/*----------
+	a scroll area
+-------*/
 .on-scroll{
 	width: 100%;
 	position: absolute;
@@ -54,6 +58,9 @@ body {
 	}
 }
 
+/*----------
+	decoration
+-------*/
 .obj-decoration{
 	position: absolute;
 	z-index: -1;
@@ -63,6 +70,9 @@ body {
 	display: table;
 }
 
+/*----------
+	heading area
+-------*/
 .heading{
 	text-transform: uppercase;
 	font-family: 'Arvo', serif;
@@ -81,6 +91,7 @@ body {
 	margin-top: 1rem;
 	position: relative;
 	padding: 0 1rem;
+	font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif;
 	&::after{
 		content: '';
 		width: 100%;
@@ -93,10 +104,28 @@ body {
 		transform: translateY(35%);
 	}
 }
+
+/*----------
+	title area
+-------*/
 .num__title{
 	font-size: 4.5rem;
 	font-family: 'Arvo', serif;
 }
+.sub-title{
+	font-size: 1.8rem;
+	font-weight: bold;
+	line-height: 3.5rem;
+	letter-spacing: -.05rem;
+	@include mobile{
+		letter-spacing: 0;
+		font-size: 1.6rem;
+	}
+}
+
+/*----------
+	text-color area
+-------*/
 .text-blue2{
 	color: #34a2ff;
 }
@@ -106,7 +135,9 @@ body {
 .text-green3{
 	color: #00a078;
 }
-
+/*----------
+	border color
+-------*/
 .border--blue2{
 	border-color: #4482bb !important;
 }
@@ -117,6 +148,9 @@ body {
 	border-color: #f68a3b !important;
 }
 
+/*----------
+	after-before background color
+-------*/
 .ab--blue2{
 	&::after, &::before{
 		background-color: #4482bb !important;
@@ -132,6 +166,10 @@ body {
 		background-color: #f68a3b !important;
 	}
 }
+
+/*----------
+	text description
+-------*/
 .p--description{
 	font-size: 2.5rem;
 	font-weight: bold;
@@ -141,11 +179,14 @@ body {
 	}
 }
 
+/*----------
+	vertical text
+-------*/
 .vertical-fiexd-text{
 	position: absolute;
 	left: 0;
 	top: 39.5rem;
-	height: 500rem;
+	height: 480rem;
 	writing-mode: vertical-lr;
 	-ms-writing-mode: tb-lr;
 	font-size: 40rem;
@@ -164,32 +205,31 @@ body {
 	}
 }
 
-.sub-title{
-	font-size: 1.8rem;
-	font-weight: bold;
-	line-height: 3.5rem;
-	letter-spacing: -.05rem;
-	@include mobile{
-		letter-spacing: 0;
-		font-size: 1.6rem;
-	}
-}
+/*----------
+	text more
+-------*/
 .text--normal{
 	font-weight: normal;
-}
-.under-background{
-	position: absolute;
-	z-index: -1;
 }
 
 .text--content{
 	font-size: 2.5rem;
 	font-weight: bold;
-	padding-bottom: 1rem;
+	padding-bottom: .2rem;
 	border-bottom: .5rem solid transparent;
 }
 
-//-------food button-------//
+/*----------
+	under background
+-------*/
+.under-background{
+	position: absolute;
+	z-index: -1;
+}
+
+/*----------
+	food button
+-------*/
 .food-button{
 	outline: none !important; 
 	border: .5rem solid #ed6d00;
@@ -222,8 +262,9 @@ body {
 	&:hover{opacity: .8;}
 }
 
-//-------to top button-------//
-
+/*----------
+	to top button
+-------*/
 .to-top-button{
     position: fixed;
     width: 5rem;
@@ -254,7 +295,9 @@ body {
 }
 
 
-//-------contact button------------//
+/*----------
+	contact button
+-------*/
 .contact-button{
 	width: 100%;
 	height: 6rem;
@@ -330,8 +373,9 @@ body {
 	50% { opacity:0; }
 	100% { opacity:1; }
 }
+
 .passing{
-	overflow: hidden;
+	// overflow: hidden;
 	&-bar {
 		position: relative;
 	}

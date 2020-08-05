@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import 'functions_responsive.scss';
 
+/*----------
+	commpany area
+-------*/
 .company{
 	width: 100%;
 	background-color: #ffee31;
@@ -10,6 +13,7 @@
 		}
 	.heading{
 		margin-bottom: 5rem;
+		color: #525252
 	}
 	&__info{
 		width: 100%;
@@ -21,7 +25,7 @@
 	}
 	&__title, &__detail{
 		width: 100%;
-		padding: 2rem 0;
+		padding: 1.5rem 0;
 	}
 	&__title{
 		max-width: 14.4rem;
@@ -40,6 +44,9 @@
 	}
 }
 
+/*----------
+	endpage area
+-------*/
 .end-page{
 	width: 100%;
 	background-color: #333;

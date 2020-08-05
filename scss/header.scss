@@ -1,8 +1,9 @@
 @charset "UTF-8";
 @import 'functions_responsive.scss';
 
-//----------------header
-
+/*----------
+	header area
+-------*/
 .header{
 	width: calc(100% - 19rem);
 	height: 10.7rem;
@@ -59,6 +60,9 @@
 	}
 }
 
+/*----------
+	drop menu
+-------*/
 .drop{
 	position: relative;
 	width: 100%;
@@ -73,17 +77,12 @@
 	}
 	&__item{
 		padding: 1rem 4rem;
-		color: #a9a;
+		color: #434343;
 		@include ipadpro{
 			padding: 4rem;
 		}
 		@include mobile{
 			padding: 2rem;
-		}
-		@media only screen and (min-width: 1025px){
-			&:hover > .drop__sub-menu{
-				display: block;
-			}
 		}
 		&::after{
 			content: '';
@@ -95,9 +94,6 @@
 		}
 		&:hover::after{
 			width: 100%;
-		}
-		&.active{
-			color: #434343;
 		}
 		&.active::after{
 			width: 100%;
@@ -112,7 +108,7 @@
 		color: inherit;
 	}
 
-	&__sub-menu{
+	/*&__sub-menu{
 		display: none;
 		position: absolute;
 		top: 0;
@@ -140,8 +136,12 @@
 		li:nth-child(2n+1){
 			background-color: rgba(#ccc,.6);
 		}
-	}
+	}*/
 }
+
+/*----------
+	hambuger button
+-------*/
 .hambuger-button{
 	width: 3rem;height: 2rem;
 	outline: none !important;
