@@ -13,6 +13,7 @@
 		width: 100%;
 		margin-top: 10.7rem;
 		position: relative;
+		min-height: 30rem;
 		@include mobile{
 			margin-top: 6.7rem;
 		}
@@ -20,6 +21,9 @@
 			width: 100%;
 			max-width: 70.6rem;
 			min-width: .1rem;
+			@media only screen and (max-width: 768px){
+				max-width: 50%;
+			}
 		}
 		.obj-decoration{
 			height: 71.1rem;

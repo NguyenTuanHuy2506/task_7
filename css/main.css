@@ -11,6 +11,7 @@
   width: 100%;
   margin-top: 10.7rem;
   position: relative;
+  min-height: 30rem;
 }
 @media screen and (max-width: 768px) {
   .mv__banner {
@@ -21,6 +22,11 @@
   width: 100%;
   max-width: 70.6rem;
   min-width: 0.1rem;
+}
+@media only screen and (max-width: 768px) {
+  .mv__banner img {
+    max-width: 50%;
+  }
 }
 .mv__banner .obj-decoration {
   height: 71.1rem;
