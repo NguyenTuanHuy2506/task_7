@@ -64,6 +64,7 @@
 				color: #fff;
 			}
 			button{
+				outline: none;
 				width: 100%;
 				max-width: 47.5rem;
 				height: 7rem;
@@ -73,6 +74,9 @@
 				font-size: 2rem;
 				font-weight: bold;
 				line-height: 7rem;
+				&:hover{
+					opacity: .8;
+				}
 			}
 		}
 		li:last-child{

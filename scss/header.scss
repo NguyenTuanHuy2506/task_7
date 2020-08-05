@@ -73,6 +73,7 @@
 	}
 	&__item{
 		padding: 1rem 4rem;
+		color: #a9a;
 		@include ipadpro{
 			padding: 4rem;
 		}
@@ -95,12 +96,20 @@
 		&:hover::after{
 			width: 100%;
 		}
+		&.active{
+			color: #434343;
+		}
+		&.active::after{
+			width: 100%;
+			
+		}
 	}
 
 	&__sub-title{
 		position: relative;
 		font-size: 1.8rem;
 		font-weight: bold;
+		color: inherit;
 	}
 
 	&__sub-menu{
@@ -109,18 +118,15 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		margin-top: 4rem;
+		margin-top: 5rem;
 		padding: 1rem;
 		background-color: rgba(#1f1f1f,.8);
 		@include ipadpro{
 			position: relative;
-			// &.active{
-			// 	display: block;
-			// }
 		}
 		li{
 			position: relative;
-			padding: 1.5rem 0;
+			padding: 1.5rem 1rem;
 			font-size: 1.8rem;
 			color: #ccc;
 			letter-spacing: .3rem;

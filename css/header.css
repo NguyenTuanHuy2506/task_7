@@ -85,6 +85,7 @@
 }
 .drop__item {
   padding: 1rem 4rem;
+  color: #a9a;
 }
 @media screen and (max-width: 1024px) {
   .drop__item {
@@ -112,10 +113,17 @@
 .drop__item:hover::after {
   width: 100%;
 }
+.drop__item.active {
+  color: #434343;
+}
+.drop__item.active::after {
+  width: 100%;
+}
 .drop__sub-title {
   position: relative;
   font-size: 1.8rem;
   font-weight: bold;
+  color: inherit;
 }
 .drop__sub-menu {
   display: none;
@@ -123,7 +131,7 @@
   top: 0;
   left: 0;
   right: 0;
-  margin-top: 4rem;
+  margin-top: 5rem;
   padding: 1rem;
   background-color: rgba(31, 31, 31, 0.8);
 }
@@ -134,7 +142,7 @@
 }
 .drop__sub-menu li {
   position: relative;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
   font-size: 1.8rem;
   color: #ccc;
   letter-spacing: 0.3rem;

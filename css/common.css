@@ -233,6 +233,9 @@ body {
   right: 1.8rem;
   top: 55%;
 }
+.food-button:hover {
+  opacity: 0.8;
+}
 
 .to-top-button {
   position: fixed;

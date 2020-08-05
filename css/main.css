@@ -89,6 +89,9 @@
   transition: all 0.3s ease;
   z-index: 1020;
 }
+.mv .contact-rect:hover {
+  opacity: 0.8;
+}
 .mv .contact-rect span {
   font-size: 1.8rem;
   font-family: "Arvo", serif;
