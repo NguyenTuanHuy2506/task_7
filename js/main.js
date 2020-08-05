@@ -1,4 +1,5 @@
 //----------window load resize scroll function-------//
+var _goingToId = 0;
 $(window).on('load resize scroll', function(){
 	var _scroll = $(window).scrollTop();
 	var _toTopButton = $('.to-top-button');
@@ -27,17 +28,19 @@ $(window).on('load resize scroll', function(){
 	$('.visiable-area').each(function(){
 		let _top = $(this).offset().top;
 		let _bottom = $(this).offset().top + $(this).height();
-		if (_top < _scroll + _wh/2 && _bottom > _scroll + _wh/2){
+		if (_top < _scroll + _wh/2 && _bottom > _scroll + _wh/2 && _goingToId === 0){
 			var _id = '#' + $(this).attr('id');
 			$('.drop__item').each(function(){
 				if($(this).find('.drop__sub-title > .on-link').attr('href') ===  _id)
 				{
+					console.log("_goingToId");
 				 	$(this).addClass('active');
 				}
 				else{$(this).hasClass('active') ? $(this).removeClass('active') : null;}
 			});
 		}
 	});
+	return false;
 });
 
 //----------hambuger button-------//
@@ -76,28 +79,34 @@ $('.hambuger-button').click(function(){
 //----------mv scroll-------//
 var _mvScroll = 0;
 $('.mv').bind('mousewheel', function(e) {
+	e.preventDefault();
 	if(e.originalEvent.wheelDelta < 0 && _mvScroll == 0) 
 	{
 		_mvScroll = 1;
 		$('html, body').animate({
 	 		scrollTop: $('.message').offset().top - 100 }, 300, 'linear', function(){
-	 			_mvScroll = 0;});
+	 			_mvScroll = 0;
+	 	});
 	}
 });
 
 //----------on link goto id-------//
 var _subMenuOpen = 0;
+
 $('.on-link').click(function(e){
 	let _tar = $(this).attr('href');
 	let _wiw = window.innerWidth;
+	e.preventDefault();
+	_goingToId = 1;
 	//------
 	if(_tar !== '#link'){
 		//--------body's animate
 		$('html, body').animate({
 	        scrollTop: $($.attr(this, 'href')).offset().top - 120},
-	        500,
-	        'swing'
+	        'slow',
+	        function(){setTimeout(function(){_goingToId = 0;console.log('adasd'+_goingToId);}, 600) }
 	    );
+
 		//------close hambuger if it is open
 	    let _hambuger = $('.hambuger-button');
 	    _hambuger.hasClass('active') ? _hambuger.click() : _hambuger = null;
@@ -142,8 +151,9 @@ $('.on-link').click(function(e){
 		    return false;
 		}
 		else{
-			return false;
-		}*/	
+			
+		}*/
+		// return false;
 	}
 });
 
@@ -181,8 +191,17 @@ $('.on-link').click(function(e){
 $('.to-top-button').click(function(event) {
     /* Act on the event */
     $('html, body').animate({
+        scrollTop: 0//$($.attr(this, 'href')).offset().top
+    }, 'slow', 'linear');
+    return false;
+});
+
+//----------on scroll-------//
+$('.on-scroll').click(function(event) {
+    /* Act on the event */
+    $('html, body').animate({
         scrollTop: $($.attr(this, 'href')).offset().top
-    }, 400, 'linear');
+    }, 'slow', 'linear');
     return false;
 });
 
