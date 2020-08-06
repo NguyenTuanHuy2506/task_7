@@ -16,6 +16,7 @@
 		min-height: 30rem;
 		@include mobile{
 			margin-top: 6.7rem;
+			min-height: 0;
 		}
 		img{
 			width: 100%;
@@ -32,9 +33,9 @@
 			top: 5.5rem;
 			left: 32.8rem;
 			@include mobile{
-				left: 50%;
-				right: 0;
-				top: 0;
+				left: 2rem;
+				right: 2rem;
+				top: 2rem;
 				height: 100%;
 			}
 		}
@@ -52,6 +53,9 @@
 			margin: auto;
 			padding: 0 2rem;
 		}
+		@media only screen and (max-width: 767px){
+			padding: 0 2rem 0 4rem;
+		}
 		h3{
 			text-indent: -1rem;
 			label{
@@ -64,6 +68,9 @@
 				letter-spacing: -.2rem;
 				@media only screen and (max-width:767px){
 					font-size: 2rem;
+					letter-spacing: 0;
+					line-height: 4rem;
+					border-bottom: .4rem solid #ffee31;
 				}
 			}
 		}

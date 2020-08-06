@@ -60,6 +60,9 @@ body {
   margin-left: 2rem;
   background-color: #000;
 }
+.on-scroll:hover {
+  opacity: 0.8;
+}
 
 /*----------
 	decoration

@@ -16,6 +16,7 @@
 @media screen and (max-width: 768px) {
   .mv__banner {
     margin-top: 6.7rem;
+    min-height: 0;
   }
 }
 .mv__banner img {
@@ -37,9 +38,9 @@
 }
 @media screen and (max-width: 768px) {
   .mv__banner .obj-decoration {
-    left: 50%;
-    right: 0;
-    top: 0;
+    left: 2rem;
+    right: 2rem;
+    top: 2rem;
     height: 100%;
   }
 }
@@ -60,6 +61,11 @@
     padding: 0 2rem;
   }
 }
+@media only screen and (max-width: 767px) {
+  .mv__content {
+    padding: 0 2rem 0 4rem;
+  }
+}
 .mv__content h3 {
   text-indent: -1rem;
 }
@@ -75,6 +81,9 @@
 @media only screen and (max-width: 767px) {
   .mv__content h3 label {
     font-size: 2rem;
+    letter-spacing: 0;
+    line-height: 4rem;
+    border-bottom: 0.4rem solid #ffee31;
   }
 }
 .mv .contact {
